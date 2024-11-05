@@ -34,11 +34,33 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    
+    
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
-    # - name: Setup Terraform
-    #   uses: hashicorp/setup-terraform@v1
-    #   with:
-    #     cli_config_credentials_token: ${{ secrets.snowflake_API_TOKEN }}
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        #cli_config_credentials_token: ${{ secrets.snowflake_API_TOKEN }}
+        SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+        SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+        SNOWFLAKE_AUTHENTICATOR: ${{ secrets.SNOWFLAKE_AUTHENTICATOR }}
+        SNOWFLAKE_PRIVATE_KEY: ${{ secrets.SNOWFLAKE_PRIVATE_KEY }}
+
+    # export variables
+    - name: Set Environment Variables
+      run: |
+        echo "export SNOWFLAKE_ACCOUNT=${SNOWFLAKE_ACCOUNT}" >> $GITHUB_ENV
+        echo "export SNOWFLAKE_USER=${SNOWFLAKE_USER}" >> $GITHUB_ENV
+        echo "export SNOWFLAKE_AUTHENTICATOR=${SNOWFLAKE_AUTHENTICATOR}" >> $GITHUB_ENV
+        echo "export SNOWFLAKE_PRIVATE_KEY=${SNOWFLAKE_PRIVATE_KEY}" >> $GITHUB_ENV
+        # echo "export SNOWFLAKE_PASSWORD=${SNOWFLAKE_PASSWORD}" >> $GITHUB_ENV
+        # echo "export SNOWFLAKE_ROLE=${SNOWFLAKE_ROLE}" >> $GITHUB_ENV
+        # echo "export SNOWFLAKE_WAREHOUSE=${SNOWFLAKE_WAREHOUSE}" >> $GITHUB_ENV
+        # echo "export SNOWFLAKE_DATABASE=${SNOWFLAKE_DATABASE}" >> $GITHUB_ENV
+        # echo "export SNOWFLAKE_SCHEMA=${SNOWFLAKE_SCHEMA}" >> $GITHUB_ENV
+        
+    - name: check-version
+      run: terraform --version
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
