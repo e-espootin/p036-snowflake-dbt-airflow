@@ -47,17 +47,17 @@ jobs:
         SNOWFLAKE_PRIVATE_KEY: ${{ secrets.SNOWFLAKE_PRIVATE_KEY }}
 
     # export variables
-    - name: Set Environment Variables
-      run: |
-        echo "export SNOWFLAKE_ACCOUNT=${SNOWFLAKE_ACCOUNT}" >> $GITHUB_ENV
-        echo "export SNOWFLAKE_USER=${SNOWFLAKE_USER}" >> $GITHUB_ENV
-        echo "export SNOWFLAKE_AUTHENTICATOR=${SNOWFLAKE_AUTHENTICATOR}" >> $GITHUB_ENV
-        echo "export SNOWFLAKE_PRIVATE_KEY=${SNOWFLAKE_PRIVATE_KEY}" >> $GITHUB_ENV
-        # echo "export SNOWFLAKE_PASSWORD=${SNOWFLAKE_PASSWORD}" >> $GITHUB_ENV
-        # echo "export SNOWFLAKE_ROLE=${SNOWFLAKE_ROLE}" >> $GITHUB_ENV
-        # echo "export SNOWFLAKE_WAREHOUSE=${SNOWFLAKE_WAREHOUSE}" >> $GITHUB_ENV
-        # echo "export SNOWFLAKE_DATABASE=${SNOWFLAKE_DATABASE}" >> $GITHUB_ENV
-        # echo "export SNOWFLAKE_SCHEMA=${SNOWFLAKE_SCHEMA}" >> $GITHUB_ENV
+    # - name: Set Environment Variables
+    #   run: |
+    #     echo "export SNOWFLAKE_ACCOUNT=${SNOWFLAKE_ACCOUNT}" >> $GITHUB_ENV
+    #     echo "export SNOWFLAKE_USER=${SNOWFLAKE_USER}" >> $GITHUB_ENV
+    #     echo "export SNOWFLAKE_AUTHENTICATOR=${SNOWFLAKE_AUTHENTICATOR}" >> $GITHUB_ENV
+    #     echo "export SNOWFLAKE_PRIVATE_KEY=${SNOWFLAKE_PRIVATE_KEY}" >> $GITHUB_ENV
+    #     # echo "export SNOWFLAKE_PASSWORD=${SNOWFLAKE_PASSWORD}" >> $GITHUB_ENV
+    #     # echo "export SNOWFLAKE_ROLE=${SNOWFLAKE_ROLE}" >> $GITHUB_ENV
+    #     # echo "export SNOWFLAKE_WAREHOUSE=${SNOWFLAKE_WAREHOUSE}" >> $GITHUB_ENV
+    #     # echo "export SNOWFLAKE_DATABASE=${SNOWFLAKE_DATABASE}" >> $GITHUB_ENV
+    #     # echo "export SNOWFLAKE_SCHEMA=${SNOWFLAKE_SCHEMA}" >> $GITHUB_ENV
         
     - name: check-version
       run: terraform --version
