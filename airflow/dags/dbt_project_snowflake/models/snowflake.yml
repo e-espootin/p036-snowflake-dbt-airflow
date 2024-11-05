@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: snowflake
+    database: dbt_db  
+    schema: dbt_schema  
+    tables:
+      - name: LISTINGS_SEATTLE
+      - name: LISTINGS_BOSTON
+      - name: REVIEWS_SEATTLE
+      - name: REVIEWS_BOSTON
+      - name: CALENDAR_SEATTLE
+      - name: CALENDAR_BOSTON
+

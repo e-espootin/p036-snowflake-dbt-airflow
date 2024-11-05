@@ -1,0 +1,5 @@
+version: 2
+data_tests:
+  - name: test_no_duplicate_cleansed_calendar
+    description: >
+      test for get duplicates in cleansed_Calendar

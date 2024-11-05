@@ -1,0 +1,1 @@
+{{ transform_table_listings('snowflake', 'LISTINGS_BOSTON') }}

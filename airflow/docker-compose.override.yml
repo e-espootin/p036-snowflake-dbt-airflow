@@ -1,0 +1,35 @@
+version: '3'
+services:
+  webserver:
+    networks:
+      - p036
+
+  scheduler:
+    networks:
+      - p036
+
+  triggerer:
+    networks:
+      - p036
+
+  
+  postgres:
+    image: postgres:13
+    # environment:
+    #   - POSTGRES_USER=airflow
+    #   - POSTGRES_PASSWORD=airflow
+    #   - POSTGRES_DB=airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - p036
+    
+ 
+volumes:
+  postgres_data:
+
+  
+networks:
+  p036:
+    name: p036
+    driver: bridge

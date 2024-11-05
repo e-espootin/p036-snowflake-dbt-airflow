@@ -1,0 +1,1 @@
+{{ transform_table_reviews('snowflake', 'REVIEWS_BOSTON') }}

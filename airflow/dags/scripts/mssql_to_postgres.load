@@ -1,0 +1,14 @@
+LOAD DATABASE
+    FROM mssql://sa:wPi8x@69qO8XN!@mssql/testdb1
+    INTO postgres://postgres:postgres@postgres:5432/testdb1
+
+
+WITH include drop, create tables, create indexes, reset sequences, foreign keys
+
+CAST type datetime to timestamptz using zero-dates-to-null,
+     type varchar when (= precision 0) to text
+
+SET work_mem to '16MB', maintenance_work_mem to '512 MB'
+
+BEFORE LOAD DO
+    $$ CREATE SCHEMA IF NOT EXISTS public; $$;

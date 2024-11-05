@@ -1,0 +1,259 @@
+
+version: 2
+
+models:
+  - name: raw_Calendar_seattle
+    description: "desc for raw_Calendar"
+    columns:
+      - name: Listing_ID
+        data_tests:
+          - not_null
+      - name: date
+        data_tests:
+          - not_null
+      - name: available
+        data_tests:
+          - not_null
+
+  - name: raw_Calendar_boston
+    description: "desc for raw_Calendar"
+    columns:
+      - name: Listing_ID
+        data_tests:
+          - not_null
+      - name: date
+        data_tests:
+          - not_null
+      - name: available
+        data_tests:
+          - not_null
+
+  - name: cleansed_Calendar
+    description: "desc for cleansed_Calendar"
+    tests:
+      - tests_assert_no_duplicates:
+          columns: ['LISTING_ID', 'Date']
+        
+    columns:
+      - name: Listing_ID
+        data_tests:
+          - not_null
+
+
+  - name: cleansed_listings
+    description: "desc for cleansed_listings"
+
+  - name: cleansed_reviews
+    description: "desc for cleansed_reviews"
+
+  - name: fact_airbnb
+    description: "desc for fact_airbnb"
+
+      
+
+
+  - name: raw_listings_seattle
+    description: "desc for raw_listings seattle"
+    columns:
+      - name: ID
+      - name: LISTING_URL
+      - name: SCRAPE_ID
+      - name: LAST_SCRAPED
+      - name: NAME
+      - name: SUMMARY
+      - name: SPACE
+      - name: DESCRIPTION
+      - name: EXPERIENCES_OFFERED
+      - name: NEIGHBORHOOD_OVERVIEW
+      - name: NOTES
+      - name: TRANSIT
+      - name: THUMBNAIL_URL
+      - name: MEDIUM_URL
+      - name: PICTURE_URL
+      - name: XL_PICTURE_URL
+      - name: HOST_ID
+      - name: HOST_URL
+      - name: HOST_NAME
+      - name: HOST_SINCE
+      - name: HOST_LOCATION
+      - name: HOST_ABOUT
+      - name: HOST_RESPONSE_TIME
+      - name: HOST_RESPONSE_RATE
+      - name: HOST_ACCEPTANCE_RATE
+      - name: HOST_IS_SUPERHOST
+      - name: HOST_THUMBNAIL_URL
+      - name: HOST_PICTURE_URL
+      - name: HOST_NEIGHBOURHOOD
+      - name: HOST_LISTINGS_COUNT
+      - name: HOST_TOTAL_LISTINGS_COUNT
+      - name: HOST_VERIFICATIONS
+      - name: HOST_HAS_PROFILE_PIC
+      - name: HOST_IDENTITY_VERIFIED
+      - name: STREET
+      - name: NEIGHBOURHOOD
+      - name: NEIGHBOURHOOD_CLEANSED
+      - name: NEIGHBOURHOOD_GROUP_CLEANSED
+      - name: CITY
+      - name: STATE
+      - name: ZIPCODE
+      - name: MARKET
+      - name: SMART_LOCATION
+      - name: COUNTRY_CODE
+      - name: COUNTRY
+      - name: LATITUDE
+      - name: LONGITUDE
+      - name: IS_LOCATION_EXACT
+      - name: PROPERTY_TYPE
+      - name: ROOM_TYPE
+      - name: ACCOMMODATES
+      - name: BATHROOMS
+      - name: BEDROOMS
+      - name: BEDS
+      - name: BED_TYPE
+      - name: AMENITIES
+      - name: SQUARE_FEET
+      - name: PRICE
+      - name: WEEKLY_PRICE
+      - name: MONTHLY_PRICE
+      - name: SECURITY_DEPOSIT
+      - name: CLEANING_FEE
+      - name: GUESTS_INCLUDED
+      - name: EXTRA_PEOPLE
+      - name: MINIMUM_NIGHTS
+      - name: MAXIMUM_NIGHTS
+      - name: CALENDAR_UPDATED
+      - name: HAS_AVAILABILITY
+      - name: AVAILABILITY_30
+      - name: AVAILABILITY_60
+      - name: AVAILABILITY_90
+      - name: AVAILABILITY_365
+      - name: CALENDAR_LAST_SCRAPED
+      - name: NUMBER_OF_REVIEWS
+      - name: FIRST_REVIEW
+      - name: LAST_REVIEW
+      - name: REVIEW_SCORES_RATING
+      - name: REVIEW_SCORES_ACCURACY
+      - name: REVIEW_SCORES_CLEANLINESS
+      - name: REVIEW_SCORES_CHECKIN
+      - name: REVIEW_SCORES_COMMUNICATION
+      - name: REVIEW_SCORES_LOCATION
+      - name: REVIEW_SCORES_VALUE
+      - name: REQUIRES_LICENSE
+      - name: LICENSE
+      - name: JURISDICTION_NAMES
+      - name: INSTANT_BOOKABLE
+      - name: CANCELLATION_POLICY
+      - name: REQUIRE_GUEST_PROFILE_PICTURE
+      - name: REQUIRE_GUEST_PHONE_VERIFICATION
+      - name: CALCULATED_HOST_LISTINGS_COUNT
+      - name: REVIEWS_PER_MONTH
+
+  - name: raw_listings_boston
+    description: "desc for raw_listings boston"
+    columns:
+      - name: ID
+      - name: LISTING_URL
+      - name: SCRAPE_ID
+      - name: LAST_SCRAPED
+      - name: NAME
+      - name: SUMMARY
+      - name: SPACE
+      - name: DESCRIPTION
+      - name: EXPERIENCES_OFFERED
+      - name: NEIGHBORHOOD_OVERVIEW
+      - name: NOTES
+      - name: TRANSIT
+      - name: THUMBNAIL_URL
+      - name: MEDIUM_URL
+      - name: PICTURE_URL
+      - name: XL_PICTURE_URL
+      - name: HOST_ID
+      - name: HOST_URL
+      - name: HOST_NAME
+      - name: HOST_SINCE
+      - name: HOST_LOCATION
+      - name: HOST_ABOUT
+      - name: HOST_RESPONSE_TIME
+      - name: HOST_RESPONSE_RATE
+      - name: HOST_ACCEPTANCE_RATE
+      - name: HOST_IS_SUPERHOST
+      - name: HOST_THUMBNAIL_URL
+      - name: HOST_PICTURE_URL
+      - name: HOST_NEIGHBOURHOOD
+      - name: HOST_LISTINGS_COUNT
+      - name: HOST_TOTAL_LISTINGS_COUNT
+      - name: HOST_VERIFICATIONS
+      - name: HOST_HAS_PROFILE_PIC
+      - name: HOST_IDENTITY_VERIFIED
+      - name: STREET
+      - name: NEIGHBOURHOOD
+      - name: NEIGHBOURHOOD_CLEANSED
+      - name: NEIGHBOURHOOD_GROUP_CLEANSED
+      - name: CITY
+      - name: STATE
+      - name: ZIPCODE
+      - name: MARKET
+      - name: SMART_LOCATION
+      - name: COUNTRY_CODE
+      - name: COUNTRY
+      - name: LATITUDE
+      - name: LONGITUDE
+      - name: IS_LOCATION_EXACT
+      - name: PROPERTY_TYPE
+      - name: ROOM_TYPE
+      - name: ACCOMMODATES
+      - name: BATHROOMS
+      - name: BEDROOMS
+      - name: BEDS
+      - name: BED_TYPE
+      - name: AMENITIES
+      - name: SQUARE_FEET
+      - name: PRICE
+      - name: WEEKLY_PRICE
+      - name: MONTHLY_PRICE
+      - name: SECURITY_DEPOSIT
+      - name: CLEANING_FEE
+      - name: GUESTS_INCLUDED
+      - name: EXTRA_PEOPLE
+      - name: MINIMUM_NIGHTS
+      - name: MAXIMUM_NIGHTS
+      - name: CALENDAR_UPDATED
+      - name: HAS_AVAILABILITY
+      - name: AVAILABILITY_30
+      - name: AVAILABILITY_60
+      - name: AVAILABILITY_90
+      - name: AVAILABILITY_365
+      - name: CALENDAR_LAST_SCRAPED
+      - name: NUMBER_OF_REVIEWS
+      - name: FIRST_REVIEW
+      - name: LAST_REVIEW
+      - name: REVIEW_SCORES_RATING
+      - name: REVIEW_SCORES_ACCURACY
+      - name: REVIEW_SCORES_CLEANLINESS
+      - name: REVIEW_SCORES_CHECKIN
+      - name: REVIEW_SCORES_COMMUNICATION
+      - name: REVIEW_SCORES_LOCATION
+      - name: REVIEW_SCORES_VALUE
+      - name: REQUIRES_LICENSE
+      - name: LICENSE
+      - name: JURISDICTION_NAMES
+      - name: INSTANT_BOOKABLE
+      - name: CANCELLATION_POLICY
+      - name: REQUIRE_GUEST_PROFILE_PICTURE
+      - name: REQUIRE_GUEST_PHONE_VERIFICATION
+      - name: CALCULATED_HOST_LISTINGS_COUNT
+      - name: REVIEWS_PER_MONTH
+
+  - name: raw_reviews_seattle
+    description: "desc for reviews_seattle"
+    columns:
+      - name: Listing_ID
+        data_tests:
+          - not_null
+
+  - name: raw_reviews_boston
+    description: "desc for reviews_boston"
+    columns:
+      - name: Listing_ID
+        data_tests:
+          - not_null
