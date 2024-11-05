@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='incremental') }}
 
 select 
     lis.ID
@@ -36,5 +36,6 @@ join
 join
     {{ ref('dim_host') }} as host
         on host.listing_id = lis.ID
+WHERE lis.ID > (SELECT MAX(ID) FROM {{ this }})
 order by
     lis.ID desc

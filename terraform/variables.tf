@@ -33,15 +33,15 @@ variable "service_dbt_user" {
 
 
 #####
+
 variable "AWS_ACCESS_KEY_ID" {
-  description = "AWS Access Key ID"
+  description = "AWS_ACCESS_KEY_ID"
   type        = string
-  default = file(var.AWS_ACCESS_KEY_ID)
+  sensitive   = true
 }
 
 variable "AWS_SECRET_ACCESS_KEY" {
-  description = "AWS Secret Key"
+  description = "AWS_SECRET_ACCESS_KEY"
   type        = string
-  default = file(var.AWS_SECRET_ACCESS_KEY)
-  
+  sensitive   = true
 }

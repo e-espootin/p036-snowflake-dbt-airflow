@@ -29,7 +29,7 @@ data transformation with dbt, airflow, snowflake, terraform, python
 
 ## Terraform
 - [x] . create database
-- [ ] . create bucket
+- [ ] . create S3 bucket
 - [ ] . create stage in snowflake
 - [ ] . fetch keys from Key vault
 - [ ] . set github actions for run terraform

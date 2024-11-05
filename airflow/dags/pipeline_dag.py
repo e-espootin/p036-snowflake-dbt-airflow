@@ -29,11 +29,11 @@ with DAG(
         bash_command='echo hello!',
     )
 
-    # task 1: run terraform
-    run_terraform = BashOperator(
-        task_id='run_terraform',\
-        #bash_command='echo "hello!" '
-        bash_command='cd /usr/local/airflow/dags/terraform_4triggerOnly && ls -ll && terraform --version && terraform init && terraform plan && terraform apply -auto-approve',
+    # task 1: todo: generate random data
+    generate_random_data = BashOperator(
+        task_id='generate_random_data',\
+        bash_command='echo "hello!" '
+        
     )
 
     # Task 2: Run dbt Transformations
@@ -48,4 +48,4 @@ with DAG(
         bash_command='cd /usr/local/airflow/dags/dbt_project_snowflake && dbt test',
     )
 
-    started_task >> run_terraform >> run_dbt >> test_dbt
+    started_task >> generate_random_data >> run_dbt >> test_dbt

@@ -17,6 +17,7 @@ resource "snowflake_database" "db" {
     name = var.database
 }
 
+
 resource "snowflake_schema" "schema" {
   database   = var.database
   name       = var.schema
@@ -103,6 +104,4 @@ resource "snowflake_stage" "my_stage" {
     url      = "s3://ebi-generalpurpose-bucket/snowflake-dbt/"
     credentials = "AWS_KEY_ID='${var.AWS_ACCESS_KEY_ID}' AWS_SECRET_KEY='${var.AWS_SECRET_ACCESS_KEY}'"
 
-
-  
 }
