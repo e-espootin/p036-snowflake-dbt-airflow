@@ -96,7 +96,7 @@ resource "snowflake_grant_account_role" "grants" {
   user_name = snowflake_user.user.name
 }
 
-
+/*
 resource "snowflake_stage" "my_stage" {
     name     = "my_s3_stage_2"
     database = var.database
@@ -105,3 +105,4 @@ resource "snowflake_stage" "my_stage" {
     credentials = "AWS_KEY_ID='${var.AWS_ACCESS_KEY_ID}' AWS_SECRET_KEY='${var.AWS_SECRET_ACCESS_KEY}'"
 
 }
+*/
