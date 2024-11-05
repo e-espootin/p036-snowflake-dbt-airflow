@@ -19,7 +19,7 @@ data transformation with dbt, airflow, snowflake, terraform, python
 - [x] . create macros
 - [x] . add custom tests
 - [x] . create fact / dimension tables
-- [ ] . incremental load
+- [x] . incremental load
 
 ## snowflake
 - [x] . stage : raw data
